@@ -1,0 +1,41 @@
+﻿@model DockNetFiddle.Models.ProgramSpecification
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<br />
+
+<div class="row">
+    <div class="col-xs-12 col-md-2">
+        <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="#program-cs" aria-controls="program-cs" role="tab" data-toggle="tab">Program.cs</a></li>
+            <li role="presentation"><a href="#project-json" aria-controls="project-json" role="tab" data-toggle="tab">project.json</a></li>
+        </ul>
+    </div>
+
+    <div class="col-xs-12 col-md-10">
+        <form class="form-horizontal" id="program-form" asp-controller="Run" asp-action="Index" method="post">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="program-cs">
+                    <div class="form-group">
+                        <textarea asp-for="Program" class="form-control" rows="20"></textarea>
+                        <span asp-validation-for="Program"></span>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="project-json">
+                    <div class="form-group">
+                        <textarea asp-for="ProjectJSON" class="form-control" rows="20"></textarea>
+                        <span asp-validation-for="ProjectJSON"></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>    
+</div>
+
+<div class="row hidden" id="program-result-container">
+    <div class="well">
+        <samp id="program-result"></samp>
+    </div>
+</div>
