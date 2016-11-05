@@ -13,7 +13,10 @@ cd $tempAppFolder
 
 # restore and run program, saving output in same folder as original file
 # the compilation output can be removed from the output file by running a separated "dotnet build" command before "dotnet run"
-dotnet restore && dotnet run > "/$zipFileDir/$zipFileName.output" 2>&1
+dotnet restore && dotnet run > "/$tempAppFolder/$zipFileName.output" 2>&1
+
+#copy entire output 
+cp /$tempAppFolder/$zipFileName.output /outputs/$zipFileName.output
 
 # remove temp folder
 rm -rf $tempAppFolder
