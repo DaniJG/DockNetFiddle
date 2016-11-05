@@ -28,7 +28,7 @@ $(function () {
 
     function showResults(data, status, xhr) {
         if (data && data.result) {
-            resultEl.text(data.result);
+            resultEl.html(data.result);
             resultContainerEl.removeClass("hidden");
         }                
     }

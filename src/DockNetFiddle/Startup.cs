@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using DockNetFiddle.Services;
 
 namespace DockNetFiddle
 {
@@ -29,6 +30,8 @@ namespace DockNetFiddle
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddTransient<IProgramExecutor, ProgramExecutor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
