@@ -8,6 +8,6 @@ namespace DockNetFiddle.Services
 {
     public interface IProgramExecutor
     {
-        string Execute(ProgramSpecification program);
+        Task<string> Execute(ProgramSpecification program);
     }
 }

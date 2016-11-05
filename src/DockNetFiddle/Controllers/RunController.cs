@@ -17,12 +17,12 @@ namespace DockNetFiddle.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index([FromBody]ProgramSpecification model)
+        public async Task<IActionResult> Index([FromBody]ProgramSpecification model)
         {
             if (!ModelState.IsValid) return StatusCode(400);
 
             return Json(new {
-                result = executorService.Execute(model)
+                result = await executorService.Execute(model)
             });
         }
     }
