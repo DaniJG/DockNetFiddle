@@ -1,0 +1,22 @@
+# If any dockerfile changes you need to rebuild! https://github.com/docker/compose/issues/1679
+#	docker-compose -f dockercompose.yml build
+# To start both containers:
+#	docker-compose -f dockercompose.yml up
+# To stop and remove both containers:
+#	docker-compose -f dockercompose.yml down
+# Attach a terminal to the coderunner container once it is running:
+#	docker exec -it docknetfiddle_coderunner_1 /bin/sh
+version: '2'
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: docknetfiddle.dockerfile 
+    ports:
+      - "8080:80"
+    volumes_from:
+      - coderunner
+  coderunner:
+    build:
+      context: ./coderunner
+      dockerfile: codeRunner.dockerfile 
