@@ -23,6 +23,13 @@ VOLUME /outputs
 # Copy script files
 COPY init.sh coderunner.sh launcher.sh ./
 
+#Create precompiled app with default project.json
+RUN mkdir defaultApp \
+    && cd /defaultApp \
+    && dotnet new \
+    && dotnet restore \
+	&& dotnet build
+
 # Monitor folder where new programs will be copied
 RUN touch incron.rules \
     # Use an intermediate script "launcher.sh" that we use to run as root with its environment variables

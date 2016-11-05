@@ -4,6 +4,14 @@ $(function () {
     var resultEl = $("#program-result");
     var resultContainerEl = $("#program-result-container");
 
+    $("#enable-projectjson").change(function () {
+        if ($(this).is(":checked")) {
+            $("#ProjectJSON").removeAttr('disabled');
+        } else {
+            $("#ProjectJSON").attr('disabled', 'disabled');
+        }
+    });
+
     $("#run-program-btn").click(runProgram);
 
     function runProgram() {
@@ -11,7 +19,7 @@ $(function () {
 
         var data = {
             program: $("#Program").val(),
-            projectjson: $("#ProjectJSON").val()
+            projectjson: $("#enable-projectjson").is(":checked") ? $("#ProjectJSON").val() : null
         };
 
         $.ajax({

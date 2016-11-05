@@ -25,7 +25,14 @@
                 </div>
                 <div role="tabpanel" class="tab-pane" id="project-json">
                     <div class="form-group">
-                        <textarea asp-for="ProjectJSON" class="form-control" rows="20"></textarea>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="enable-projectjson"> Provide your own project.json
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea asp-for="ProjectJSON" class="form-control" rows="20" disabled></textarea>
                         <span asp-validation-for="ProjectJSON"></span>
                     </div>
                 </div>

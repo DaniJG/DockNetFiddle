@@ -11,7 +11,6 @@ namespace DockNetFiddle.Models
         [Required]
         public string Program { get; set; }
 
-        [Required]
         public string ProjectJSON { get; set; }
 
         #region defaultProgram
