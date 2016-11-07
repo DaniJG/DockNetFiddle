@@ -6,14 +6,10 @@
 #	docker exec -it coderunner /bin/sh
 FROM microsoft/dotnet:latest
 
-# Update apt-get package cache
-RUN apt-get -qq update
+# Update apt-get package cache, then install "zip" and "incron"
+RUN apt-get -qq update && apt-get --assume-yes install zip incron
 
-# Install zip
-RUN apt-get --assume-yes install zip
-
-# Install incron
-RUN apt-get --assume-yes install incron
+# Make sure container user has permissions to use incron (Should be updated once we create a user)
 RUN echo 'root' >> /etc/incron.allow
 
 # Expose required volumes
