@@ -6,7 +6,7 @@
 # Attach additional shell by opening another docker command line and running:
 #	docker exec -it docknetfiddle /bin/sh
 # For the proper way, check: https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/
-FROM microsoft/dotnet
+FROM microsoft/dotnet:1.1.0-sdk-projectjson
 WORKDIR /app
 ENV ASPNETCORE_URLS http://+:80
 ENV ASPNETCORE_ENVIRONMENT development
