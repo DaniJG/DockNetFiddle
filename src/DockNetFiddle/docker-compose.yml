@@ -9,6 +9,7 @@
 version: '2'
 services:
   webapp:
+    container_name: webapp
     build:
       context: .
       dockerfile: docknetfiddle.dockerfile 
@@ -17,6 +18,7 @@ services:
     volumes_from:
       - coderunner
   coderunner:
+    container_name: coderunner
     build:
       context: ./coderunner
-      dockerfile: codeRunner.dockerfile 
+      dockerfile: codeRunner.dockerfile  

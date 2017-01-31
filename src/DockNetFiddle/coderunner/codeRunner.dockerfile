@@ -39,4 +39,4 @@ RUN touch incron.rules \
 	&& chmod +x /init.sh
 
 # Start incron service when container starts and keep container alive
-CMD /init.sh && bash
+ENTRYPOINT ["/init.sh"]
