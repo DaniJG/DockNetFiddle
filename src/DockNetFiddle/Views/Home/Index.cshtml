@@ -9,7 +9,7 @@
     <div class="col-xs-12 col-md-2">
         <ul class="nav nav-pills nav-stacked" role="tablist">
             <li role="presentation" class="active"><a href="#program-cs" aria-controls="program-cs" role="tab" data-toggle="tab">Program.cs</a></li>
-            <li role="presentation"><a href="#project-json" aria-controls="project-json" role="tab" data-toggle="tab">project.json</a></li>
+            <li role="presentation"><a href="#project" aria-controls="project" role="tab" data-toggle="tab">project.csproj</a></li>
         </ul>
     </div>
 
@@ -23,17 +23,17 @@
                         <span asp-validation-for="Program"></span>
                     </div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="project-json">
+                <div role="tabpanel" class="tab-pane" id="project">
                     <div class="form-group">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" id="enable-projectjson"> Provide your own project.json
+                                <input type="checkbox" id="enable-project"> Provide your own project.csproj
                             </label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <textarea asp-for="ProjectJSON" class="form-control" rows="20" disabled></textarea>
-                        <span asp-validation-for="ProjectJSON"></span>
+                        <textarea asp-for="Project" class="form-control" rows="20" disabled></textarea>
+                        <span asp-validation-for="Project"></span>
                     </div>
                 </div>
             </div>

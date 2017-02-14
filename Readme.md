@@ -8,6 +8,13 @@ DockNetFiddle is a simple site where users can enter minimum but complete .Net C
 
 The project uses 2 containers, one running the ASP.Net Core application and a separated one which will run the programs entered by the user.
 
+## VS2015 vs VS2017
+
+The project was originaly built in VS2015 and used the "old" .Net Core project style based on the project.json file. Since then, VS2017 has been released and .Net Core has moved back to csproj and its XML based project file.
+
+- If you want to use VS2015, stay on the **master** branch
+- If you want to try VS2017, use the **VS2017-csproj** branch
+- If all you want to do is `docker-compose up`, you can try either branch :). The dockerfiles in **master** are locked to the old project.json base images while the dockerfiles in **VS2017-csproj** use the latest .net core images.
 
 ## Instructions
 

@@ -11,10 +11,11 @@ namespace DockNetFiddle.Models
         [Required]
         public string Program { get; set; }
 
-        public string ProjectJSON { get; set; }
+        public string Project { get; set; }
 
         #region defaultProgram
-        private static string DefaultProgram = @"using System;
+        private static string DefaultProgram = 
+@"using System;
 namespace ConsoleApplication
 {
     public class Program
@@ -26,29 +27,20 @@ namespace ConsoleApplication
     }
 }";
 
-        private static string DefaultProjectJSON = @"{
-  ""version"": ""1.0.0-*"",
-  ""buildOptions"": {
-    ""debugType"": ""portable"",
-    ""emitEntryPoint"": true
-  },
-  ""dependencies"": {},
-  ""frameworks"": {
-    ""netcoreapp1.0"": {
-      ""dependencies"": {
-        ""Microsoft.NETCore.App"": {
-          ""type"": ""platform"",
-          ""version"": ""1.0.1""
-        }
-      },
-      ""imports"": ""dnxcore50""
-    }
-  }
-}";
+        private static string DefaultProject = 
+@"<Project Sdk=""Microsoft.NET.Sdk"">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
+";
         public static ProgramSpecification Default = new ProgramSpecification
         {
             Program = ProgramSpecification.DefaultProgram,
-            ProjectJSON = ProgramSpecification.DefaultProjectJSON
+            Project = ProgramSpecification.DefaultProject
         };
         #endregion
     }

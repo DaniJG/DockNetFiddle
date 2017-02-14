@@ -22,7 +22,8 @@ COPY init.sh coderunner.sh launcher.sh ./
 #Create precompiled app with default project.json
 RUN mkdir defaultApp \
     && cd /defaultApp \
-    && dotnet new \
+    && dotnet new console \
+	&& mv defaultApp.csproj project.csproj \
     && dotnet restore \
 	&& dotnet build
 

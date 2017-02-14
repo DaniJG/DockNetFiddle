@@ -8,10 +8,10 @@ zipFileName=$(basename $1)
 tempAppFolder="/tmp/$zipFileName"
 
 # was a project.json included?
-unzip -l $zipFilePath | grep project.json
-hasProjectJson=$?
+unzip -l $zipFilePath | grep project.csproj
+hasProjectFile=$?
 
-if [ $hasProjectJson -eq 0 ]; then
+if [ $hasProjectFile -eq 0 ]; then
     #there is a project json, treat it as new application requiring dotnet restore
 
 	# unzip program into temp folder

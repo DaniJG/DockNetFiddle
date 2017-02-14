@@ -4,11 +4,11 @@ $(function () {
     var resultEl = $("#program-result");
     var resultContainerEl = $("#program-result-container");
 
-    $("#enable-projectjson").change(function () {
+    $("#enable-project").change(function () {
         if ($(this).is(":checked")) {
-            $("#ProjectJSON").removeAttr('disabled');
+            $("#Project").removeAttr('disabled');
         } else {
-            $("#ProjectJSON").attr('disabled', 'disabled');
+            $("#Project").attr('disabled', 'disabled');
         }
     });
 
@@ -19,7 +19,7 @@ $(function () {
 
         var data = {
             program: $("#Program").val(),
-            projectjson: $("#enable-projectjson").is(":checked") ? $("#ProjectJSON").val() : null
+            project: $("#enable-project").is(":checked") ? $("#Project").val() : null
         };
 
         $.ajax({
