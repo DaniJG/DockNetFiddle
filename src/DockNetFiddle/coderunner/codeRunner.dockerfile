@@ -4,7 +4,7 @@
 #	docker run -it --rm coderunner:latest
 # Attach additional shell by opening another docker command line and running:
 #	docker exec -it coderunner /bin/sh
-FROM microsoft/dotnet:latest
+FROM microsoft/dotnet:1.1.0-sdk-projectjson
 
 # Update apt-get package cache, then install "zip" and "incron"
 RUN apt-get -qq update && apt-get --assume-yes install zip incron

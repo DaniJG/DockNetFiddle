@@ -27,18 +27,18 @@ namespace ConsoleApplication
 }";
 
         private static string DefaultProjectJSON = @"{
-  ""version"": ""1.0.0-*"",
+  ""version"": ""1.1.0-*"",
   ""buildOptions"": {
     ""debugType"": ""portable"",
     ""emitEntryPoint"": true
   },
   ""dependencies"": {},
   ""frameworks"": {
-    ""netcoreapp1.0"": {
+    ""netcoreapp1.1"": {
       ""dependencies"": {
         ""Microsoft.NETCore.App"": {
           ""type"": ""platform"",
-          ""version"": ""1.0.1""
+          ""version"": ""1.1.0""
         }
       },
       ""imports"": ""dnxcore50""
